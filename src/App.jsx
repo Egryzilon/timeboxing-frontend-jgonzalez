@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Login from './components/Login'
 
 function App() {
   
