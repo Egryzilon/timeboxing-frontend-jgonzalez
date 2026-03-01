@@ -1,5 +1,5 @@
-  import { useState } from 'react'
-/* import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom' */
+import { useState } from 'react'
+import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 
 function Login() {
   
@@ -10,6 +10,7 @@ function Login() {
         e.preventDefault();
         if (user.trim().length > 0) {
           console.log("registro correcto, usuario llamado \"" + user.trim() + "\"");
+          /* navigate('/Dashboard') */
           
         } else {
           alert('No puedes llamarte así.\n' +
@@ -20,33 +21,31 @@ function Login() {
     
  return (
     <div className="min-h-screen bg-color-grey flex items-center justify-center p-0">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl overflow-hidden border-4">
-        <div className="bg-red-500 h-3"></div>
-        
+      <div className="w-full  bg-gray-100 max-w-md bg-red rounded-2xl overflow-hidden border-4">
         <div className="p-8">
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label 
-                htmlFor="trainer-name" 
-                className="block text-sm font-big text-gray-700 mb-2"
+                htmlFor="user-name" 
+                className="block text-3xl font-bold text-black mb-2"
               >
                 Nombre:
               </label>
               <input
-                id="trainer-name"
+                id="user-name"
                 type="text"
-                placeholder="Tu nombre (ejemplo: Ash)"
+                placeholder="Tu nombre"
                 value={user} onChange={(e) => setUser(e.target.value)}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-300 focus:border-blue-500 outline-none transition-all duration-200 placeholder-gray-400 text-lg"
+                className="w-full px-4 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-grey-600 focus:border-grey-500 outline-none transition-all duration-200 placeholder-gray-400 text-lg"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-yellow-300"
+              className="w-full text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-.32 focus:ring-grey-3"
             >
-              Comenzar a capturar pokémons
+              Log in/up
             </button>
           </form>
 

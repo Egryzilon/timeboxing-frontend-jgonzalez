@@ -1,21 +1,18 @@
-import { useState } from 'react'
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Login from './components/Login'
+import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
 
 function App() {
   
   return (
+  <BrowserRouter>
+
     <Routes>
-      {/* Ruta pública */}
       <Route path="/" element={<Login />} />
-      
-      {/* Ruta protegida (visualmente) */}
-      <Route path="/Dashboard" element={<Dashboard />} />
-      
-      {/* Catch-all */}
-      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+  </BrowserRouter>
+
   )
 }
 
