@@ -20,7 +20,7 @@ function Login() {
     
     
  return (
-    <div className="min-h-screen bg-color-grey flex items-center justify-center p-0">
+    <div className="min-h-screen bg-color-gray flex items-center justify-center p-0">
       <div className="w-full  bg-gray-100 max-w-md bg-red rounded-2xl overflow-hidden border-4">
         <div className="p-8">
           <form onSubmit={handleLogin} className="space-y-6">
@@ -37,13 +37,13 @@ function Login() {
                 placeholder="Tu nombre"
                 value={user} onChange={(e) => setUser(e.target.value)}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-grey-600 focus:border-grey-500 outline-none transition-all duration-200 placeholder-gray-400 text-lg"
+                className="w-full px-4 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-gray-500 outline-none transition-all duration-200 placeholder-gray-400 text-lg"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-.32 focus:ring-grey-3"
+              className="w-full text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-.32 focus:ring-gray-3"
             >
               Log in/up
             </button>
