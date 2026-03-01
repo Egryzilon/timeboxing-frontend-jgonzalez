@@ -6,16 +6,16 @@ import Login from './components/Login'
 function App() {
   
   return (
-    
-      <BrowserRouter>
     <Routes>
-      <Route path="/" element={<Login/>} />
-      <Route path="/Dashboard" element={<Dashboard/>} />
-      <Route path="/timebox" element={<Navigate to="/"/>} />
-
+      {/* Ruta pública */}
+      <Route path="/" element={<Login />} />
+      
+      {/* Ruta protegida (visualmente) */}
+      <Route path="/Dashboard" element={<Dashboard />} />
+      
+      {/* Catch-all */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
-  </BrowserRouter>
-
   )
 }
 
