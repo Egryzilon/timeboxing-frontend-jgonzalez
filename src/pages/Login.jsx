@@ -1,33 +1,32 @@
 import { useState } from 'react'
-import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Login() {
-  
-      const [user, setUser] = useState('');
+  const [user, setUser] = useState('')
+  const navigate = useNavigate()
+
+  const handleLogin = (e) => {
+    e.preventDefault()
+    if (user.trim().length > 0) {
+      console.log("registro correcto, usuario llamado \"" + user.trim() + "\"")
       
-    
-      const handleLogin = (e) => {
-        e.preventDefault();
-        if (user.trim().length > 0) {
-          console.log("registro correcto, usuario llamado \"" + user.trim() + "\"");
-          /* navigate('/Dashboard') */
-          
-        } else {
-          alert('No puedes llamarte así.\n' +
-                'Intenta otro nombre si?');
-        }
-      };
-    
-    
- return (
-    <div className="min-h-screen bg-color-gray flex items-center justify-center p-0">
-      <div className="w-full  bg-gray-100 max-w-md bg-red rounded-2xl overflow-hidden border-4">
+      // succeso!!!
+      navigate('/Dashboard')
+      
+    } else {
+      alert('No puedes llamarte así.\nIntenta otro nombre si?')
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-gray-800 rounded-2xl overflow-hidden shadow-2xl border border-gray-700">
         <div className="p-8">
           <form onSubmit={handleLogin} className="space-y-6">
             <div>
               <label 
                 htmlFor="user-name" 
-                className="block text-3xl font-bold text-black mb-2"
+                className="block text-2xl font-bold text-white mb-2"
               >
                 Nombre:
               </label>
@@ -35,32 +34,24 @@ function Login() {
                 id="user-name"
                 type="text"
                 placeholder="Tu nombre"
-                value={user} onChange={(e) => setUser(e.target.value)}
+                value={user} 
+                onChange={(e) => setUser(e.target.value)}
                 required
-                className="w-full px-4 py-3 border-2 border-gray-500 rounded-lg focus:ring-2 focus:ring-gray-600 focus:border-gray-500 outline-none transition-all duration-200 placeholder-gray-400 text-lg"
+                className="w-full px-4 py-3 border border-gray-600 rounded-lg bg-gray-700 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all duration-200"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full text-gray-900 font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-.32 focus:ring-gray-3"
+              className="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-blue-700 hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-400"
             >
               Log in/up
             </button>
           </form>
-
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default Login
-/*** #Explicacion_comentario
- * No se necesita esto al final si se especifica la funcion que se exportara' por defecto al importar el archivo
- * dejando la declaracion de la funcio'n asi'
- * ```
- * export default function Login() {
- * ```
- * pero si se agrega el `export default` al final, es ma's sencillo de cambiar esto.
- */

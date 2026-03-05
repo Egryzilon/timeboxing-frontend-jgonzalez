@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 import Login from './pages/Login'
+import Dashboard from './pages/Dashboard'
+import Resumen from './pages/Resumen'
 
 function App() {
   
@@ -9,10 +11,11 @@ function App() {
 
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/resumen" element={<Resumen />} />
     </Routes>
   </BrowserRouter>
 
   )
 }
-
 export default App
