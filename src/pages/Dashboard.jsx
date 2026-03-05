@@ -8,8 +8,8 @@ function Dashboard() {
     navigate('/')
   }
 
-  const handle_go_resumen = () => {
-    navigate('/resumen')
+  const handle_go_planificador = () => {
+    navigate('/planificador')
   }
 
   return (
@@ -47,12 +47,12 @@ function Dashboard() {
           </div>
 
           <div className="col-span-1 bg-gray-700 rounded-xl p-6 border border-gray-700 shadow-lg flex flex-col justify-center items-center text-center">
-            <h3 className="text-xl font-bold mb-4">Ir a resumen</h3>
+            <h3 className="text-xl font-bold mb-4">Ir a planificador</h3>
             <button
-              onClick={handle_go_resumen}
+              onClick={handle_go_planificador}
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors"
             >
-              Ver resumen
+              Ver planificador
             </button>
           </div>
 

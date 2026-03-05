@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 
-function Resumen() {
+function Planificador() {
   const navigate = useNavigate()
 
   const handle_back = () => {
@@ -18,7 +18,7 @@ function Resumen() {
     <div className="min-h-screen bg-gray-900 text-white">
       <header className="bg-gray-800 border-b border-gray-700 shadow-md">
         <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-400">Resumen de Tareas</h1>
+          <h1 className="text-2xl font-bold text-blue-400">Planificador de Tareas</h1>
           <button
             onClick={handle_back}
             className="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-sm font-medium transition-colors"
@@ -72,4 +72,4 @@ function Resumen() {
   )
 }
 
-export default Resumen
+export default Planificador
